@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AxFileBrowserController;
+use AspectoX\AxFileBrowser\AxFileBrowserController;
 
 Route::prefix('ax-filebrowser')->group(function () {
  
