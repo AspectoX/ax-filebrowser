@@ -1,0 +1,32 @@
+# Dependencies
+/vendor/
+composer.lock
+
+# IDE / editors
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Laravel testing artifacts
+.env
+.env.*
+!.env.example
+
+# PHPUnit
+.phpunit.result.cache
+coverage/
+
+# Node (if used for asset building)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build output
+/public/hot
+/public/mix-manifest.json

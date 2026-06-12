@@ -1,0 +1,32 @@
+{
+    "name": "aspectox/ax-filebrowser",
+    "description": "A file browser package for Laravel applications",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "AspectoX",
+            "homepage": "https://aspectox.github.io/aspectox/"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+		"illuminate/support": "^13.0",
+		"illuminate/routing": "^13.0",
+		"illuminate/filesystem": "^13.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "AspectoX\\AxFileBrowser\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AspectoX\\AxFileBrowser\\AxFileBrowserServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
