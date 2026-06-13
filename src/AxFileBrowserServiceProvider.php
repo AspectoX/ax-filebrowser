@@ -12,10 +12,24 @@ class AxFileBrowserServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
 
         // ── Vistas ────────────────────────────────────────────────────────────
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'ax-filebrowser');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views/ax-filebrowser', 'ax-filebrowser');
 
         // ── Idiomas ───────────────────────────────────────────────────────────
         $this->loadTranslationsFrom(__DIR__ . '/../lang', 'ax-filebrowser');
+
+        // Registrar traducciones sin namespace para __('ax-filebrowser.key')
+        $locale   = app()->getLocale();
+        $fallback = app()->getFallbackLocale();
+        foreach ([$locale, $fallback, 'en'] as $lang) {
+            $file = __DIR__ . '/../lang/' . $lang . '/ax-filebrowser.php';
+            if (file_exists($file)) {
+                app('translator')->addLines(
+                    collect(require $file)->mapWithKeys(fn($v, $k) => ["ax-filebrowser.{$k}" => $v])->all(),
+                    $lang
+                );
+                break;
+            }
+        }
 
         // ── Migraciones ───────────────────────────────────────────────────────
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');

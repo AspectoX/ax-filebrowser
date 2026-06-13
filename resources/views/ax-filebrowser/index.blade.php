@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ax-FileBrowser 1.0</title>
-    <link rel="stylesheet" href="/css/ax-filebrowser.css">
-</head>
-<body id="ax-filebrowser">
+@push('styles')
+    <link rel="stylesheet" href="/vendor/ax-filebrowser/css/ax-filebrowser.css">
+@endpush
+<div id="ax-filebrowser">
 
     {{-- ── TOOLBAR ──────────────────────────────────────────────────────────── --}}
     <header id="toolbar" class="toolbar">
@@ -839,6 +834,7 @@
         }
     </script>
 
-    <script src="/js/ax-filebrowser.js"></script>
-</body>
-</html>
+@push('scripts')
+    <script src="/vendor/ax-filebrowser/js/ax-filebrowser.js"></script>
+@endpush
+</div>

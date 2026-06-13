@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use AspectoX\AxFileBrowser\AxFileBrowserController;
 
-Route::prefix('ax-filebrowser')->group(function () {
+Route::prefix('ax-filebrowser')->middleware('web')->group(function () {
  
     // Vista principal
     Route::get('/', [AxFileBrowserController::class, 'index'])->name('ax.index');

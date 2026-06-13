@@ -41,6 +41,24 @@ Publish the assets (CSS and JS):
 php artisan vendor:publish --tag=ax-filebrowser-assets
 ```
 
+This copies the CSS and JS files to `public/vendor/ax-filebrowser/`.
+
+## Layout Integration
+
+The package views use `@push('styles')` and `@push('scripts')` to inject assets into your layout. For this to work, your layout must include the corresponding `@stack` directives.
+
+Add `@stack('styles')` inside your `<head>` tag and `@stack('scripts')` before `</body>`:
+
+```blade
+{{-- In your layout head partial --}}
+@stack('styles')
+
+{{-- In your layout before </body> --}}
+@stack('scripts')
+```
+
+Once the assets are published and the stacks are in place, navigate to `/ax-filebrowser` — the file browser will render inside your app's layout automatically.
+
 ## Publishing other resources
 
 Publish only what you need:
@@ -155,6 +173,12 @@ php artisan vendor:publish --tag=ax-filebrowser-lang
 ```
 
 This creates `lang/vendor/ax-filebrowser/{locale}/ax-filebrowser.php`. Duplicate the `en` file and translate.
+
+## Support / Donations
+
+If this package was useful to you, please consider making a donation. Any contribution is greatly appreciated!
+
+Si este paquete te resultó útil, considera realizar una donación. ¡Cualquier aporte es enormemente apreciado!
 
 ## License
 
