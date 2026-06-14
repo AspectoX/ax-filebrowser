@@ -174,11 +174,24 @@ php artisan vendor:publish --tag=ax-filebrowser-lang
 
 This creates `lang/vendor/ax-filebrowser/{locale}/ax-filebrowser.php`. Duplicate the `en` file and translate.
 
+## Editor Integration
+
+The file picker can be integrated with popular rich text editors and inputs, including:
+
+- CKEditor 4
+- TinyMCE 6 / 7
+- TipTap
+- Filament (RichEditor and TipTap Editor for Filament)
+- Quill
+- Plain textarea / text input
+
+Each integration uses a universal callback system: when a file is selected, the picker calls `window[callbackName](code, url, name)`, where `code` is a ready-to-insert HTML tag, `url` is the file path, and `name` is the filename.
+
+For detailed setup instructions and code examples for each editor, see [`public/vendor/editor-plugins/integration.md`](public/vendor/editor-plugins/integration.md).
+
 ## Support / Donations
 
 If this package was useful to you, please consider making a donation. Any contribution is greatly appreciated!
-
-Si este paquete te resultó útil, considera realizar una donación. ¡Cualquier aporte es enormemente apreciado!
 
 ## License
 
